@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//.AddRazorRuntimeCompilation()
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
@@ -24,7 +24,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
